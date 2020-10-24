@@ -10,7 +10,7 @@
 ## Copyright Information
 <p align="center">
 2021 Copyrighted by Impact Offroading | Created &amp; Designed by : Lynx Group 
-<br><img src="https://impactatv.com/lynx.svg" width="25px">
+<br><img src="https://impactatv.com/lynx-p.svg" width="75px">
 </p>
 
 ## Impact Sponsors

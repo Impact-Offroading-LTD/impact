@@ -7,18 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Impact
+## Copyright Information
+<p> 2021 Copyrighted by Impact Offroading | Created &amp; Designed by : Lynx Group <img src="https://impactatv.com/lynx.svg" alt="Italian Trulli" class="align-center text-center" style="width:25px;"></p>
 
-Impact is a web application built on the laravel framework with expressive, elegant syntax. We created this application
-to better manage offroading and to make connections with other pepole around the world.
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
 ## Impact Sponsors
 

@@ -8,7 +8,8 @@
 </p>
 
 ## Copyright Information
-<p> 2021 Copyrighted by Impact Offroading | Created &amp; Designed by : Lynx Group <img src="https://impactatv.com/lynx.svg" alt="Italian Trulli" class="align-center text-center" style="width:25px;"></p>
+2021 Copyrighted by Impact Offroading | Created &amp; Designed by : Lynx Group 
+<img src="https://impactatv.com/lynx.svg" width="25px">
 
 
 ## Impact Sponsors

@@ -1,5 +1,5 @@
 <div>
-<div class="card">
+<div class="card" style="border-radius: 25px;">
             <div class="card-body">
                <center>
                   <h2 class="text-primary" style="margin-top:5px;color: #e8253b;"><i class="fad fa-fingerprint"></i></h2>
@@ -8,7 +8,7 @@
             </div>
          </div>
          <br>
-         <div class="card">
+         <div class="card" style="border-radius: 25px;">
             <div class="card-body">
             <form wire:submit.prevent="updatepassword">
             <strong><i class="far fa-lock-alt"></i> {{ __('Update Password') }}</strong>
@@ -40,7 +40,7 @@
                <input type="password" class="form-control" wire:model="confirmpassword" >
             </div>
 
-            <button type="submit" class="btn btn-primary float-right">Save Changes</button><br>
+            <button type="submit" class="btn btn-primary float-right" style="border-radius: 25px;">Save Changes</button><br>
             </form>
             </div>
          </div>

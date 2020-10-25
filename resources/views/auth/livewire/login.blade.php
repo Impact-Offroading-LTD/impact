@@ -29,18 +29,38 @@
                @endif
 
                @if($step == 2)
-               <form method="POST" action="/login">
-               <div class="user-avatar" style="display: block;margin-left: auto;margin-right: auto;background-image: url('https://media.discordapp.net/attachments/756086069275131945/769594596077862952/impact-discord.png?width=468&height=468');width:75px;height:75px;"></div>
+               <center>
+               <br>
 
-               <br><h5 class="text-center">Welcome, {{$username}}!</h5>
-               <p class="text-center">{{$email}}</p><br>
+               <div class="user-avatar" style="background-image: url('https://media.discordapp.net/attachments/756086069275131945/769594596077862952/impact-discord.png');width:75px;height:75px;"></div>
 
-               <div class="form-group"><input class="form-control" placeholder="Password" type="password" id="password" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"></div>
-               <!--<div class="form-group">
-                  <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
-               </div>-->
-               <button class="btn btn-primary btn-block" type="submit">Log In</button> 
-               </form>
+               <br><h5>Welcome, {{$username}}!</h5>
+               <p>{{$email}}</p>
+               </center>
+               @endif
+
+               @if($step == 2)
+
+                  <form method="POST" action="/login">
+                     @csrf
+               
+                        <input id="email" name="email" value="{{$email}}" hidden><br>
+                        <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        <br>
+                        <button class="btn btn-primary btn-block" type="submit">Log In</button> 
+                        <br>
+                        <center>
+                        <a href="{{ route('password.request') }}" style="text-decoration:none;">
+                        {{ __('Forgot Your Password?') }}
+                        </a>
+                        </center>
+                  </form>
+
                @endif
 
 
@@ -87,6 +107,6 @@
       </div>
    </div>
    <div class="footer-copyright">
-      <p>© 2020 Copyright Text</p>
+    <p>© 2021 Copyrighted by Impact Offroading | Created & Designed by : Lynx Group <img src="/lynx.svg" alt="Italian Trulli" class="align-center text-center" style="width:25px;"></p>   
    </div>
 </footer>

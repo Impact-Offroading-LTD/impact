@@ -1,5 +1,5 @@
 <div>
-    <div class="card">
+    <div class="card" style="border-radius: 25px;">
                 <div class="card-body">
                    <center>
                       <h2 class="text-primary" style="margin-top:5px;color: #e8253b;"><i class="fad fa-cog"></i></h2>
@@ -8,7 +8,7 @@
                 </div>
              </div>
              <br>
-    <div class="card">
+    <div class="card" style="border-radius: 25px;">
                 <div class="card-body">
 
                    <center>
@@ -25,12 +25,12 @@
                     @else
                         <p>Avatar is provided by Discord.</p>
                     @endif
-                       <a href="https://en.gravatar.com/" class="btn btn-sm btn-primary">Set Gravatar</a>
+                       <a href="https://en.gravatar.com/" class="btn btn-sm btn-primary" style="border-radius: 25px;">Set Gravatar</a>
 
                        @if(Auth::user()->avatar_url)
-                       <button wire:click="remove_discord" type="button" class="btn btn-sm btn-danger" @if(!$discord_connection) disabled @endif >Remove Discord Avatar</button>
+                       <button wire:click="remove_discord" type="button" style="border-radius: 25px;" class="btn btn-sm btn-danger" @if(!$discord_connection) disabled @endif >Remove Discord Avatar</button>
                        @else
-                       <button wire:click="add_discord" type="button" class="btn btn-sm btn-primary" @if(!$discord_connection) disabled @endif >Set Discord Avatar</button>
+                       <button wire:click="add_discord" type="button" style="border-radius: 25px;" class="btn btn-sm btn-primary" @if(!$discord_connection) disabled @endif >Set Discord Avatar</button>
                        @endif
                     <br><br>
                     </center>

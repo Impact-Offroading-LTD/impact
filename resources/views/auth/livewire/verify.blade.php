@@ -31,15 +31,17 @@
             background-position: center center;
          }
 
-         .grecaptcha-badge { 
-            visibility: hidden;
+         .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
          }
 
          body {
             background: #e9ecef !important;
          }
          </style>
-        
+         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
 
@@ -140,7 +142,88 @@
         </div>
     </nav>
 
-    {{ $slot }}
+
+<main class="page login-page">
+   <section class="clean-block dark py-4" style="min-height:600px;">
+      <div class="container">
+         @if($step == 0)           
+         <div class="card" style="    max-width: 500px;    margin: auto;border-radius:25px;">
+            <div class="card-body">
+               
+
+               <form method="POST" action="/verify">
+               @csrf
+               <h2 class="text-info text-center">Verify</h2>
+               <center><p style="text-center align-center">Please verify that you are not a bot.</p></center>
+               <input type="hidden" id="discord_id" name="discord_id" value="{{$id}}">
+               <style>
+                  .text-center {
+                     text-align: center;
+                  }
+
+                  .g-recaptcha {
+                     display: inline-block;
+                  }
+               </style>
+               <div style="text-align: center;">
+               <div class="g-recaptcha" data-sitekey="6Lf7R9sZAAAAAL7BxVSL5iPfJF9McMNvhrm8Rht4"></div><br>
+               </div>
+               <button class="btn btn-primary btn-block" type="submit">Verify</button><br>
+               <small>This site is protected by reCAPTCHA and the Google 
+                  <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                  <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+               </small>
+               </form>
+
+
+            </div>
+         </div>
+         @endif
+      </div>
+   </section>
+</main>
+<footer class="page-footer dark">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-3">
+            <h5>Get started</h5>
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Sign up</a></li>
+               <li><a href="#">Downloads</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>About us</h5>
+            <ul>
+               <li><a href="#">Company Information</a></li>
+               <li><a href="#">Contact us</a></li>
+               <li><a href="#">Reviews</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>Support</h5>
+            <ul>
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">Help desk</a></li>
+               <li><a href="#">Forums</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>Legal</h5>
+            <ul>
+               <li><a href="#">Terms of Service</a></li>
+               <li><a href="#">Terms of Use</a></li>
+               <li><a href="#">Privacy Policy</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="footer-copyright">
+    <p>© 2021 Copyrighted by Impact Offroading | Created & Designed by : Lynx Group <img src="/lynx.svg" alt="Italian Trulli" class="align-center text-center" style="width:25px;"></p>   
+   </div>
+</footer>
+
 </div>
 
 

@@ -1,5 +1,5 @@
 <div>
-<div class="card">
+<div class="card" style="border-radius:25px;">
             <div class="card-body">
                <center>
                   <h2 class="text-primary" style="margin-top:5px;color: #e8253b;"><i class="fad fa-cog"></i></h2>
@@ -8,7 +8,7 @@
             </div>
          </div>
          <br>
-<div class="card">
+<div class="card" style="border-radius:25px;">
             <div class="card-body">
             <strong><i class="far fa-cog"></i> {{ __('Profile Information') }}</strong>
 <hr>
@@ -51,7 +51,7 @@
                <label for="exampleInputEmail1" class="form-label">Favorite Vehicle</label>
                <input type="text" class="form-control" wire:model="fav_vehicle" value="{{Auth::user()->fav_vehicle}}" >
             </div>
-               <button type="submit" class="btn btn-primary float-right">Save Changes</button><br>
+               <button type="submit" class="btn btn-primary float-right" style="border-radius:25px;">Save Changes</button><br>
                </form>
             </div>
          </div>

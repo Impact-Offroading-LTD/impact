@@ -1,5 +1,5 @@
 <div>
-   <div class="card">
+   <div class="card" style="border-radius: 25px;">
       <div class="card-body">
          <center>
             <h2 class="text-primary" style="margin-top:5px;color: #e8253b;"><i class="fad fa-plug"></i></h2>
@@ -8,7 +8,7 @@
       </div>
    </div>
    <br>
-   <div class="card">
+   <div class="card" style="border-radius: 25px;">
       <div class="card-body">
          <strong><i class="fab fa-discord"></i> {{ __('Discord') }}</strong>
          <hr>
@@ -29,10 +29,10 @@
 
          @if ($discord_connection)
          <form wire:submit.prevent="destroydc()">
-            <button type="submit" class="btn btn-danger float-right">Unlink Discord</button>
+            <button type="submit" class="btn btn-danger float-right" style="border-radius: 25px;">Unlink Discord</button>
          </form>
          @else
-            <a href="https://discord.com/api/oauth2/authorize?client_id=764847614825988116&redirect_uri=https%3A%2F%2Fimpactatv.com%2Fdiscorddata&response_type=code&scope=identify%20email" class="btn btn-primary float-right">Link Discord</a>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=764847614825988116&redirect_uri=https%3A%2F%2Fimpactatv.com%2Fdiscorddata&response_type=code&scope=identify%20email" class="btn btn-primary float-right" style="border-radius: 25px;">Link Discord</a>
          @endif
       </div>
    </div>

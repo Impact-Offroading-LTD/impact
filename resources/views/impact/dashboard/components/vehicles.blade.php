@@ -1,21 +1,21 @@
 
 <div>
-<div class="card">
+<div class="card" style="border-radius:25px;">
             <div class="card-body">
                <center>
-                  <h2 style="margin-top:5px;" class="text-primary"><i class="fad fa-truck-monster"></i></h2>
+                  <h2 style="margin-top:5px;" class="text-secondary"><i class="far fa-truck-monster"></i></h2>
                   <p style="padding:0px;margin:0px;"><strong>Your Vehicles</strong></p>
                </center>
             </div>
          </div>
          <br>
          <div class="input-group">
-        <input wire:model="v_name" type="text" class="form-control" placeholder="Search For Vehicles" style="height: 20px;">
+        <input wire:model="v_name" type="text" class="form-control" placeholder="Search For Vehicles" style="height: 20px;border-radius:25px;">
         <!--<button type="submit" class="btn btn-primary mb-3">Search</button>-->
         </div>
         <br>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="far fa-truck-monster"></i> New Vehicle</button><br><br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border-radius:25px;"><i class="far fa-truck-monster"></i> New Vehicle</button><br><br>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,9 +67,9 @@
     </div>
 
          @foreach($vehicles as $vehicle)
-         <div class="card">
+         <div class="card" style="border-radius:25px;">
             <div class="card-body">
-            <h2 style="margin-top:5px;" class="text-primary"><i class="far fa-truck-monster"></i> <strong style="color: #fff;font-size:18px;">{{$vehicle->type}} - {{$vehicle->vehicle_name}}</strong></h2>
+            <h2 style="margin-top:5px;" class="text-primary"><i class="far fa-truck-monster"></i> <strong style="font-size:18px;">{{$vehicle->type}} - {{$vehicle->vehicle_name}}</strong></h2>
 
 
             <hr>

@@ -1,10 +1,10 @@
 
 
 <div>
-    <div class="card">
+    <div class="card" style="border-radius:25px;">
         <div class="card-body">
             <center>
-                <h2 class="text-primary" style="margin-top:5px;"><i class="fad fa-motorcycle" aria-hidden="true"></i></h2>
+                <h2 class="text-secondary" style="margin-top:5px;"><i class="far fa-motorcycle" aria-hidden="true"></i></h2>
                 <p style="padding:0px;margin:0px;"><strong>Rides</strong></p>
             </center>
         </div>
@@ -12,12 +12,12 @@
     <br>
 
     <div class="input-group">
-        <input wire:model="ride_name" type="text" class="form-control" placeholder="Search For Rides" style="height: 20px;">
+        <input wire:model="ride_name" type="text" class="form-control" placeholder="Search For Rides" style="height: 20px;border-radius:25px;">
         <!--<button type="submit" class="btn btn-primary mb-3">Search</button>-->
     </div>
     <br>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="far fa-motorcycle"></i> New Ride</button><br><br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border-radius:25px;"><i class="far fa-motorcycle"></i> New Ride</button><br><br>
 
 
     <!-- Modal -->
@@ -72,7 +72,7 @@
 
 
     @foreach($rides as $ride)
-         <div class="card">
+         <div class="card" style="border-radius:25px;">
             <div class="card-body">
                <h4 class="text-primary" style="color: #e8253b;">{{$ride->name}}</h4>
                <p style="margin-bottom:0px;padding-bottom:0px;"><i class="far fa-map-marker-alt text-primary"></i> <strong>{{$ride->location}}</strong></p>

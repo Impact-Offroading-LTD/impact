@@ -4,6 +4,7 @@ use App\Http\Livewire\Account\Accsettings;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Actions\EnableTwoFactorAuthentication;
+use App\Models\DiscordVerification;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,39 @@ Fortify::verifyEmailView(function () {
     return view('auth.verify-email');
 });
 
+Route::get('/verify/{id}', [App\Http\Controllers\VerificationController::class, 'render']);
+Route::post('/verify', [App\Http\Controllers\VerificationController::class, 'check_bot']);
+
+Route::get('/checkid/{id}', function($id)
+{
+
+    if(DiscordVerification::where('discord_id', $id)->get()->count() == 1) {
+        $obj = (object) [
+            'found' => true
+        ];
+    } else {
+        $obj = (object) [
+            'found' => false,
+            'result' => DiscordVerification::where('discord_id', $id)->get()->count()
+        ];
+    }
+    
+
+    return json_encode($obj);
+});
+
+Route::get('/apiping', function()
+{
+    $obj = (object) [
+        'name' => 'LynxAPI',
+        'version' => null,
+        'impactversion' => 1.1,
+        'pingstatus' => 2500
+    ];
+    
+
+    return json_encode($obj);
+});
 
 /* IMPACT */
 

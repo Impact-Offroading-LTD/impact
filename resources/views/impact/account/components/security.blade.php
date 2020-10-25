@@ -1,6 +1,6 @@
 <div>
-<livewire:account.securitypassword/>
-         <div class="card">
+<livewire:account.securitypassword/><br>
+         <div class="card" style="border-radius: 25px;">
             <div class="card-body">
             <strong><i class="fal fa-mobile-alt"></i> {{ __('Two Factor Authentication') }}</strong>
 <hr>
@@ -36,11 +36,11 @@
 <br><br>
 @if (Auth::user()->two_factor_secret)
 <form wire:submit.prevent="submit(true)">
-<button type="submit" class="btn btn-danger float-right">Disable Two Factor Authentication</button>
+<button type="submit" class="btn btn-danger float-right" style="border-radius: 25px;">Disable Two Factor Authentication</button>
 </form>
 @else
 <form wire:submit.prevent="submit(false)">
-<button type="submit" class="btn btn-primary float-right">Enable Two Factor Authentication</button>
+<button type="submit" class="btn btn-primary float-right" style="border-radius: 25px;">Enable Two Factor Authentication</button>
 </form>
 @endif
 

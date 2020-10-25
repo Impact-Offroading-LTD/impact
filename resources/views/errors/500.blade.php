@@ -1,59 +1,142 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- CSRF Token -->
-      <meta name="csrf-token" content="{{ csrf_token() }}">
-      <title>{{ config('app.name', 'Laravel') }}</title>
-      <!-- Tags -->
-      <!-- Fonts -->
-      <link rel="dns-prefetch" href="//fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-      <link rel="stylesheet" href="/fontawesome/css/all.css">
-      <link href="//db.onlinewebfonts.com/c/b6539b6d3432c623d8d4f9cc2a29589e?family=Berlin+Sans+FB+Demi" rel="stylesheet" type="text/css"/>
-      <style>
-         @import url(//db.onlinewebfonts.com/c/b6539b6d3432c623d8d4f9cc2a29589e?family=Berlin+Sans+FB+Demi);
-         @font-face {font-family: "Berlin Sans FB Demi"; src: url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.eot"); src: url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.woff") format("woff"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.svg#Berlin Sans FB Demi") format("svg"); }
-         li::-ms-expand {
-         display: none;
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Impact</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <!-- Styles -->
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/css/features.css">
+        <link rel="stylesheet" href="/css/highlight-blue.css">
+        <link rel="stylesheet" href="/css/highlight-clean.css">
+        
+        <style>
+         .user-avatar{
+            width: 60px;
+            height: 60px;
+            -webkit-border-radius: 60px;
+            -webkit-background-clip: padding-box;
+            -moz-border-radius: 60px;
+            -moz-background-clip: padding;
+            border-radius: 60px;
+            background-clip: padding-box;
+
+            background-size: cover;
+            background-position: center center;
          }
 
-         .card {
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important
+         .center-block {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
          }
 
-      </style>
-      @livewireStyles
-   </head>
-   <body>
-      <div id="app">
-          <br><br><br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
+         body {
+            background: #e9ecef !important;
+         }
+         </style>
+         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
 
-                <div class="card-body">
 
-                        <center>
-                        <br>
-                        <img class="mb-3" src="/impact.png" alt="" width="272">
-                        <br>
-                  <p style="padding:0px;margin:0px;font-size:25px;" class="text-danger"><i class="fad fa-times-hexagon"></i> <strong>You are IP Banned.</strong></p>
-                  <p><strong>Your IP has been blocked from ImpactATV.com</strong><br>Your IP has been banned for violating the terms of service or you are using a VPN. Please contact support@impactatv.com if you think this is an issue.</p>
-                  
-                </div>
-            </div>
+<body>
+
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-dark bg-impact shadow" style="background-color: #222425;border-color: #222425;">
+        <div class="container">
+           <a class="navbar-brand" href="{{ url('/') }}">
+           <img src="/impact-w.svg" alt="Italian Trulli" style="width: 100px;height:40px;"><br>
+           </a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+           <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+              <li class="nav-item px-2">
+                    <a class="nav-link" href="/dashboard" style="text-decoration:none;"><i class="far fa-home" style="margin-right:5px;"></i> {{ __('Home') }}</a>
+                 </li>
+                 <li class="nav-item px-2">
+                    <a class="nav-link" href="#account/myvehicles" style="text-decoration:none;"><i class="far fa-calendar-alt" style="margin-right:5px;"></i> {{ __('Events') }}</a>
+                 </li>
+                 <li class="nav-item px-2">
+                    <a class="nav-link" href="#account/myvehicles" style="text-decoration:none;"><i class="far fa-book" style="margin-right:5px;"></i> {{ __('Wiki') }}</a>
+                 </li>
+                 <li class="nav-item px-2">
+                    <a class="nav-link" href="#account/myvehicles" style="text-decoration:none;"><i class="far fa-megaphone" style="margin-right:5px;"></i> {{ __('Blog & News') }}</a>
+                 </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+              </ul>
+           </div>
         </div>
-    </div>
-</div>
+    </nav>
+
+
+<main class="page login-page">
+   <section class="clean-block dark py-4" style="min-height:600px;">
+      <div class="container">       
+         <div class="card" style="margin: auto;border-radius:25px;">
+            <div class="card-body">
+               
+                  <div class="col-sm-12">
+                  <p style="padding:0px;margin:0px;font-size:25px;" class="text-danger"><img class="mb-3" src="/dirtbike.svg" alt="" width="50" style="margin-top:10px;"> <strong>An Exception Occured</strong></p>
+                  <p><strong>Something prevented you doing the following action.</strong><br>Seems Impact has faced a critical error and could not process your action. Please try again later, if the problem keeps occuring please report this issue.</p>
+                  <strong>Exception Message : </strong><br> {{$exception->getMessage()}}
+
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+<footer class="page-footer dark">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-3">
+            <h5>Get started</h5>
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Sign up</a></li>
+               <li><a href="#">Downloads</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>About us</h5>
+            <ul>
+               <li><a href="#">Company Information</a></li>
+               <li><a href="#">Contact us</a></li>
+               <li><a href="#">Reviews</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>Support</h5>
+            <ul>
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">Help desk</a></li>
+               <li><a href="#">Forums</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h5>Legal</h5>
+            <ul>
+               <li><a href="#">Terms of Service</a></li>
+               <li><a href="#">Terms of Use</a></li>
+               <li><a href="#">Privacy Policy</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="footer-copyright">
+    <p>© 2021 Copyrighted by Impact Offroading | Created & Designed by : Lynx Group <img src="/lynx.svg" alt="Italian Trulli" class="align-center text-center" style="width:25px;"></p>   
+   </div>
+</footer>
 
 </div>
-      <!-- Scripts -->
-      @livewireScripts
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
-   </body>
+
+</body>
 </html>
